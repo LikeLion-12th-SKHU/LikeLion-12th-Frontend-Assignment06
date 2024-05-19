@@ -21,12 +21,7 @@ const App = () => {
   };
 
   const handleExplosion = () => {
-    setIsExplosionVisible(false);
-    setIsMessageVisible(true);
-  };
-
-  const handleMessageClose = () => {
-    setIsMessageVisible(false);
+    closeModal();
   };
 
   // && : 앞의 조건이 참이면 뒤에 코드가 실행되는 조건문의 역할
@@ -41,7 +36,7 @@ const App = () => {
             </span>
             {isExplosionVisible && <Timer onExplosion={handleExplosion} />}
             {isMessageVisible && (
-              <p className="message" onClick={handleMessageClose}>
+              <p className="message" onClick={handleExplosion}>
                 폭파되었습니다!
               </p>
             )}
